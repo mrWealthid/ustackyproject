@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+  align-items: center;
+  background-image: url(african-american-man-paying-with-credit-card-online-while-making-orders-via-mobile-internet-making-transaction-using-mobile-bank-application.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  width: 100%;
+}
+.header-logo {
+  display: inline-block;
+  padding: 15px;
+  margin-left: 30px;
+  z-index: 2;
+}
+
+.header-links {
+  float: right;
+  padding: 15px;
+  margin: 0px auto;
+  width: 65%;
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+
+  padding: 8px;
+  display: inline-block;
+  margin: 0px 8px;
+  font-variant: small-caps;
+}
+
+#icons {
+  display: none;
+  margin-top: 20px;
+  margin-right: 25px;
+}
+
+/* a:hover,
+  .active {
+    border: 1px solid grey;
+  } */
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 200px;
+  font-size: xx-large;
+  font-variant: small-caps;
+  color: black;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#shopping {
+  width: 250px;
+  padding: 20px;
+  margin: 70px auto;
+  border: none;
+  background-color: #ff7a00;
+  color: white;
+}
+section {
+  text-align: center;
+}
+.content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 20px;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.cards {
+  display: inline-block;
+  text-align: center;
+}
+
+#items {
+  background-color: #ff7a00;
+  color: black;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+article {
+  background-color: whitesmoke;
+  color: black;
+  padding: 30px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: black;
+  padding: 30px;
+  justify-content: space-around;
+  color: whitesmoke;
+  margin-top: 30px;
+}
+
+@media (max-width: 850px) {
+  .header-logo {
+    margin-left: 10px;
+  }
+
+  .main-content {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-links {
+    display: none;
+    margin: 0px;
+    margin-top: 15px;
+    width: 100vw;
+    text-align: center;
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+  }
+  main {
+    margin: 150px 20px;
+    justify-content: center;
+  }
+
+  a {
+    display: block;
+    padding: 20px;
+    color: black;
+  }
+  #icons {
+    display: block;
+    float: right;
+  }
+  .icon {
+    display: block;
+  }
+
+  #shopping {
+    width: 150px;
+    padding: 15px;
+  }
+}

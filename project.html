@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E Commerce Website</title>
+    <link rel="stylesheet" href="project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <div class="wrapper">
+
+        
+      <header>
+        <div class="header-logo">
+          <h2>EWS</h2>
+        </div>
+        <span id="icons">
+          <i class="fa fa-2x fa-bars"></i>
+        </span>
+        <div class="header-links">
+          <a href="#" class="active">Home</a>
+          <a href="#">About</a>
+          <a href="#">Sign up</a>
+        </div>
+      </header>
+      <main>
+        <div class="main-content">
+          <h1>
+            Wealth's<br />
+            online<br />
+            Store
+          </h1>
+        </div>
+        <button id ='shopping'>SHOP NOW</button>
+      </main>
+    </div>
+    <!-- Main Section -->
+    <article>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, rem
+        reiciendis? Magnam similique voluptatem expedita ad quia esse? Corporis
+        magni ipsam maxime eligendi aut fugit repellendus adipisci voluptatibus!
+        Voluptate, consequatur!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto mollitia at, vitae quis laborum blanditiis! Ex fugit sequi, numquam ullam nobis facilis iure sunt ea nemo repellat eaque unde et!
+      </p>
+    </article>
+
+<section>
+    <h2> OUR GADGETS</h2>
+    <div class="content">
+
+      <div class="cards">
+        <img src="product1.png" alt="samsung tv" />
+
+        <p>Samsung TV</p>
+        <button id="items">ADD TO CART</button>
+      </div>
+
+      <div class="cards">
+        <img src="product2.png" alt="Pixel 4a" />
+
+        <p>Pixel 4a</p>
+        <button id="items">ADD TO CART</button>
+      </div>
+
+      <div class="cards">
+        <img src="product3.png" alt="PS 5" />
+
+        <p>
+          PS 5</p>
+          <button id="items">ADD TO CART</button>
+        </p>
+      </div>
+
+      <div class="cards">
+        <img src="product4.png" alt="MacBook Air" />
+
+        <p>MacBook Air</p>
+        <button id="items">ADD TO CART</button>
+      </div>
+
+      <div class="cards">
+        <img src="product5.png" alt="Apple Watch" />
+
+        <p>Apple Watch</p>
+        <button id="items">ADD TO CART</button>
+      </div>
+
+      <div class="cards">
+        <img src="product6.png" alt="Air Pods" />
+
+        <p>Air Pods</p>
+        <button id="items">ADD TO CART</button>
+      </div>
+    </div>
+</section>
+    <!-- Footer Section -->
+
+    <footer>
+        <div class ="footer-logo">EWS</div>
+        <div>&copy Designed and Coded by an Ustacky Frontend Scholar</div>
+    </footer>
+
+    <script>
+      document.querySelector("#icons").onclick = () => {
+        console.log("hi friends");
+        document.querySelector(".header-links").classList.toggle("icon");
+      };
+    </script>
+  </body>
+</html>

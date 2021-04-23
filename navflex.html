@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>using flex</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="flex.css" />
+  </head>
+  <body>
+
+
+
+
+
+    <!-- Intro Section -->
+
+
+    <header>
+      <div class="logo">
+        <h2>
+          Wealthz
+        </h2>
+      </div>
+
+      <div id="icon">
+        <i class="fa fa-2x fa-bars"></i>
+      </div>
+
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Shop</a>
+      </div>
+    </header>
+
+    <script>
+      harmburger = document.querySelector("#icon");
+      links = document.querySelector(".links");
+
+      harmburger.onclick = () => {
+        links.classList.toggle("toggle");
+      };
+    </script>
+  </body>
+</html>

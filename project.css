@@ -5,6 +5,15 @@
   padding: 0px;
 }
 
+:root {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5px;
+}
+
+button {
+  outline: none;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -19,13 +28,13 @@ body {
   background-size: cover;
   background-position: center;
   color: black;
-  width: 100%;
+  width: 100vw;
 }
 .header-logo {
   display: inline-block;
-  padding: 15px;
-  margin-left: 30px;
-  z-index: 2;
+  padding: 5px 20px;
+  margin-left: 45px;
+  margin-top: 15px;
 }
 
 .header-links {
@@ -38,11 +47,16 @@ body {
 
 a {
   color: inherit;
-
-  padding: 8px;
   display: inline-block;
   margin: 0px 8px;
   font-variant: small-caps;
+}
+
+.active,
+a:hover {
+  background-color: #f3f3f3;
+  border-radius: 30px;
+  padding: 8px 15px;
 }
 
 #icons {
@@ -50,11 +64,6 @@ a {
   margin-top: 20px;
   margin-right: 25px;
 }
-
-/* a:hover,
-  .active {
-    border: 1px solid grey;
-  } */
 
 main {
   display: flex;
@@ -91,6 +100,12 @@ section {
   text-align: center;
 }
 
+.hide {
+  display: none;
+}
+.cards:hover {
+  opacity: 0.3;
+}
 #items {
   background-color: #ff7a00;
   color: black;
@@ -108,17 +123,22 @@ article {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 footer {
+  background-color: black;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.footer-grid {
   display: grid;
   grid-template-columns: auto auto;
-  background-color: black;
   padding: 30px;
   justify-content: space-around;
   color: whitesmoke;
-  margin-top: 30px;
+  grid-row-gap: 10px;
 }
 
 @media (max-width: 850px) {
@@ -127,7 +147,16 @@ footer {
   }
 
   .main-content {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .content {
+    grid-template-columns: auto auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: auto;
+    justify-content: center;
   }
 }
 
@@ -142,6 +171,7 @@ footer {
     height: 100vh;
     position: fixed;
   }
+
   main {
     margin: 150px 20px;
     justify-content: center;
@@ -152,6 +182,12 @@ footer {
     padding: 20px;
     color: black;
   }
+
+  .active,
+  a:hover {
+    background-color: transparent;
+    color: #ff7a00;
+  }
   #icons {
     display: block;
     float: right;
@@ -160,8 +196,35 @@ footer {
     display: block;
   }
 
+  .content {
+    grid-template-columns: auto;
+  }
   #shopping {
     width: 150px;
     padding: 15px;
+  }
+}
+@media (max-width: 400px) {
+  img {
+    width: 50%;
+  }
+
+  #items {
+    width: 90px;
+    padding: 5px;
+  }
+
+  #shopping {
+    width: 90px;
+    padding: 10px 5px;
+    margin-right: 100px;
+  }
+
+  .main-content {
+    font-size: 12px;
+  }
+
+  .header-logo {
+    margin-left: 0px;
   }
 }

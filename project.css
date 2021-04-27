@@ -34,8 +34,8 @@ body {
 }
 .header-logo {
   display: inline-block;
-
-  margin-left: 70px;
+  text-shadow: 2px 2px 2px grey;
+  margin-left: 85px;
   margin-top: 5px;
   color: black;
   font-family: "Gruppo", cursive;

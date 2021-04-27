@@ -206,8 +206,7 @@ footer {
   }
 
   main {
-    margin: 150px 20px;
-    justify-content: center;
+    margin: 282px -50px;
   }
 
   a {
@@ -255,6 +254,9 @@ footer {
     padding: 5px;
   }
 
+  main {
+    margin: 274px 20px;
+  }
   #shopping {
     width: 90px;
     padding: 10px 5px;
@@ -268,5 +270,8 @@ footer {
 
   .header-logo {
     margin-left: 0px;
+  }
+  .header-icon {
+    margin-right: 10px;
   }
 }

@@ -173,19 +173,16 @@ footer {
   grid-row-gap: 10px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .header-logo {
     margin-left: 10px;
   }
 
   .main-content {
     font-size: 16px;
-    margin-top: 70px;
+    margin-top: 200px;
   }
 
-main {
-margin-top:200px
-}
 
   .content {
     grid-template-columns: auto auto;

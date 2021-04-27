@@ -178,6 +178,13 @@ footer {
 .cart {
   font-size: 25px;
 }
+
+@media (max-width: 1024px) {
+  .main-content {
+    margin-top: 200px;
+  }
+}
+
 @media (max-width: 950px) {
   .header-logo {
     margin-left: 10px;
@@ -185,6 +192,7 @@ footer {
 
   .main-content {
     font-size: 16px;
+    margin-top: -75px;
   }
 
   .header-links {
@@ -202,6 +210,11 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .main-content {margin-top: 60px;
+}
+
+
+@media (max-width: 740px) {
   .header-links {
     display: none;
     margin: 0px;
@@ -245,7 +258,7 @@ footer {
   }
   .main-content {
     font-size: 16px;
-    margin-top: -40px;
+    margin-top: -190px;
     margin-left: 80px;
   }
 
@@ -259,7 +272,7 @@ footer {
     margin-right: 10px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 540px) {
   img {
     width: 50%;
   }
@@ -284,7 +297,7 @@ footer {
   .main-content {
     font-size: 12px;
     margin-left: 16px;
-    margin-top: -123px;
+    margin-top: -25px;
   }
 
   .header-logo {

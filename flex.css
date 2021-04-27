@@ -29,6 +29,23 @@ a {
 #icon {
   display: none;
 }
+
+.wealth {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+#items {
+  background-color: #ff7a00;
+  color: black;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;

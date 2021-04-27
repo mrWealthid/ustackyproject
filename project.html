@@ -17,9 +17,12 @@
         <div class="header-logo">
           <h2>EWS</h2>
         </div>
-        <span id="icons">
-          <i class="fa fa-2x fa-bars"></i>
-        </span>
+        <div class="header-icon">
+          <span id="icons">
+            <i class="fa fa-2x fa-bars"></i>
+          </span>
+          <span class="cart"> <i class="fa fa-2x fa-shopping-cart"></i></span>
+        </div>
         <div class="header-links">
           <a href="#" class="active">Home</a>
           <a href="#About">About</a>
@@ -52,52 +55,7 @@
 
     <section id="Shop">
       <h2>OUR GADGETS</h2>
-      <div class="content">
-        <div class="cards">
-          <div class="hide">150000</div>
-          <img src="product1.png" alt="samsung tv" />
-
-          <p>Samsung TV</p>
-          <button id="items">ADD TO CART</button>
-        </div>
-
-        <div class="cards">
-          <img src="product2.png" alt="Pixel 4a" />
-
-          <p>Pixel 4a</p>
-          <button id="items">ADD TO CART</button>
-        </div>
-
-        <div class="cards">
-          <img src="product3.png" alt="PS 5" />
-
-          <p>
-            PS 5
-          </p>
-          <button id="items">ADD TO CART</button>
-        </div>
-
-        <div class="cards">
-          <img src="product4.png" alt="MacBook Air" />
-
-          <p>MacBook Air</p>
-          <button id="items">ADD TO CART</button>
-        </div>
-
-        <div class="cards">
-          <img src="product5.png" alt="Apple Watch" />
-
-          <p>Apple Watch</p>
-          <button id="items">ADD TO CART</button>
-        </div>
-
-        <div class="cards">
-          <img src="product6.png" alt="Air Pods" />
-
-          <p>Air Pods</p>
-          <button id="items">ADD TO CART</button>
-        </div>
-      </div>
+      <div class="content"></div>
     </section>
     <!-- Footer Section -->
 
@@ -108,11 +66,6 @@
       </div>
     </footer>
 
-    <script>
-      document.querySelector("#icons").onclick = () => {
-        console.log("hi friends");
-        document.querySelector(".header-links").classList.toggle("icon");
-      };
-    </script>
+    <script src="project.js"></script>
   </body>
 </html>

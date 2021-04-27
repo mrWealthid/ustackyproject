@@ -34,7 +34,7 @@ body {
 }
 .header-logo {
   display: inline-block;
-  padding: 5px 20px;
+
   margin-left: 70px;
   margin-top: 5px;
   color: black;
@@ -45,7 +45,7 @@ body {
   float: right;
   padding: 15px;
   margin-right: 375px;
-  width: 28%;
+  width: 35%;
   font-weight: 600;
 }
 
@@ -65,7 +65,7 @@ a:hover {
   padding: 8px 15px;
 }
 
-#icons {
+.wealth {
   display: none;
   /* margin-top: 20px; */
   margin-right: 5px;
@@ -74,7 +74,8 @@ a:hover {
 main {
   display: flex;
   flex-direction: column;
-  margin: 70px 120px;
+  margin-top: 178px;
+  margin-left: 76px;
   font-size: xx-large;
   font-variant: small-caps;
   color: black;
@@ -173,16 +174,23 @@ footer {
   grid-row-gap: 10px;
 }
 
-@media (max-width: 800px) {
+.icon,
+.cart {
+  font-size: 25px;
+}
+@media (max-width: 950px) {
   .header-logo {
     margin-left: 10px;
   }
 
   .main-content {
     font-size: 16px;
-    margin-top: 70px;
   }
 
+  .header-links {
+    padding-top: 20px;
+    margin-right: 170px;
+  }
   .content {
     grid-template-columns: auto auto;
   }
@@ -220,10 +228,7 @@ footer {
     background-color: transparent;
     color: #ff7a00;
   }
-  #icons {
-    display: block;
-    float: right;
-  }
+
   .icon {
     display: block;
   }
@@ -242,6 +247,17 @@ footer {
     font-size: 16px;
     margin-top: -40px;
     margin-left: 80px;
+  }
+
+  .wealth {
+    display: inline-block;
+
+    margin-left: 19px;
+  }
+
+  .header-icon {
+    margin-right: 10px;
+    margin-top: 25px;
   }
 }
 @media (max-width: 400px) {
@@ -266,12 +282,12 @@ footer {
   .main-content {
     font-size: 12px;
     margin-left: 16px;
+    margin-top: -123px;
   }
 
   .header-logo {
-    margin-left: 0px;
-  }
-  .header-icon {
-    margin-right: 10px;
+    margin-left: 20px;
+
+    margin-top: 7px;
   }
 }

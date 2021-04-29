@@ -45,7 +45,7 @@ var products = [
 // Creating Product markup from the array
 products.forEach((product) => {
   const productMarkup = `<div class= "cards" data-price ="${product.price}" data-index = "${product.index}">
-<img src = "product${product.index}.png" alt = "${product.name}"/>
+<img src = "images/product${product.index}.png" alt = "${product.name}"/>
 <h4 class ="priceDetails"  id ="priceDetails${product.index}"></h4>
 <p>${product.name}</p>
 <button class ="prices">ADD TO CART</button> 

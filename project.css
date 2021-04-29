@@ -24,33 +24,34 @@ body {
 
 .wrapper {
   align-items: center;
-  background-image: url(african-american-man-paying-with-credit-card-online-while-making-orders-via-mobile-internet-making-transaction-using-mobile-bank-application.jpg);
+  background-image: url(images/african-american-man-paying-with-credit-card-online-while-making-orders-via-mobile-internet-making-transaction-using-mobile-bank-application.jpg);
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: black;
-  width: 100vw;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
 }
 .header-logo {
   display: inline-block;
   text-shadow: 2px 2px 2px grey;
   margin-left: 85px;
-  margin-top: 5px;
   color: black;
   font-family: "Gruppo", cursive;
 }
-
 .header-links {
-  float: right;
-  padding: 15px;
-  margin-right: 375px;
-  width: 35%;
   font-weight: 600;
 }
 
 .logo {
   margin-left: 18px;
+  font-size: smaller;
 }
 a {
   color: inherit;
@@ -67,22 +68,21 @@ a:hover {
 
 .wealth {
   display: none;
-  /* margin-top: 20px; */
-  margin-right: 5px;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  margin-top: 178px;
-  margin-left: 76px;
+  margin: 5px 0px;
+  margin-left: 28px;
   font-size: xx-large;
   font-variant: small-caps;
   color: black;
   justify-content: center;
   flex-wrap: wrap;
+  flex-basis: 70%;
+  height: 100vh;
 }
-
 .main-content h1 {
   text-shadow: 2px 3px 3px gray;
   font-family: "Gruppo", cursive;
@@ -90,7 +90,7 @@ main {
 #shopping {
   width: 250px;
   padding: 20px;
-  margin: 70px auto;
+  margin: 50px 30vw;
   border: none;
   background-color: #ff7a00;
   color: white;
@@ -117,9 +117,7 @@ section h2 {
 }
 
 .header-icon {
-  float: right;
-  margin-right: 45px;
-  margin-top: 22px;
+  margin-right: 15px;
 }
 .priceDetails {
   position: relative;
@@ -179,12 +177,6 @@ footer {
   font-size: 25px;
 }
 
-@media (max-width: 1024px) {
-  .main-content {
-    margin-top: 200px;
-  }
-}
-
 @media (max-width: 950px) {
   .header-logo {
     margin-left: 10px;
@@ -192,12 +184,6 @@ footer {
 
   .main-content {
     font-size: 16px;
-    margin-top: -75px;
-  }
-
-  .header-links {
-    padding-top: 20px;
-    margin-right: 170px;
   }
   .content {
     grid-template-columns: auto auto;
@@ -209,16 +195,11 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .main-content {margin-top: 60px;
-}
-
-
 @media (max-width: 740px) {
   .header-links {
     display: none;
     margin: 0px;
-    margin-top: 15px;
+    top: 80px;
     width: 100vw;
     text-align: center;
     background-color: white;
@@ -226,14 +207,11 @@ footer {
     position: fixed;
   }
 
-  main {
-    margin: 282px -50px;
-  }
-
   a {
     display: block;
     padding: 20px;
     color: black;
+    font-size: 1rem;
   }
 
   .active,
@@ -247,7 +225,7 @@ footer {
   }
 
   .cart {
-    margin-right: 20px;
+    margin-right: 5px;
   }
   .content {
     grid-template-columns: auto;
@@ -256,22 +234,14 @@ footer {
     width: 150px;
     padding: 15px;
   }
-  .main-content {
-    font-size: 16px;
-    margin-top: -190px;
-    margin-left: 80px;
-  }
 
   .wealth {
-    display: inline-block;
+    display: block;
 
-    margin-left: 19px;
-  }
-
-  .header-icon {
-    margin-right: 10px;
+    margin-left: 18px;
   }
 }
+
 @media (max-width: 540px) {
   img {
     width: 50%;
@@ -282,13 +252,9 @@ footer {
     padding: 5px;
   }
 
-  main {
-    margin: 274px 20px;
-  }
   #shopping {
     width: 90px;
     padding: 10px 5px;
-    margin: 180px auto;
   }
 
   .priceDetails {
@@ -296,13 +262,5 @@ footer {
   }
   .main-content {
     font-size: 12px;
-    margin-left: 16px;
-    margin-top: -25px;
-  }
-
-  .header-logo {
-    margin-left: 20px;
-
-    margin-top: 7px;
   }
 }

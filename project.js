@@ -61,16 +61,16 @@ const card = document.querySelectorAll(".cards");
 card.forEach((item) => {
   const price = item.getAttribute("data-price");
   const index = item.getAttribute("data-index");
-  const selectPrice = document.getElementById("priceDetails" + index);
+  const selected = item.querySelector(".priceDetails");
 
   item.addEventListener("mouseover", () => {
-    selectPrice.innerHTML = price;
-    selectPrice.style.visibility = "visible";
+    selected.innerHTML = price;
+    selected.style.visibility = "visible";
   });
 
   item.addEventListener("mouseout", () => {
-    selectPrice.innerHTML = "";
-    selectPrice.style.visibility = "hidden";
+    selected.innerHTML = "";
+    selected.style.visibility = "hidden";
   });
 });
 
@@ -78,11 +78,22 @@ card.forEach((item) => {
 
 const button = document.querySelectorAll(".prices");
 button.forEach((btn) => {
-  btn.addEventListener("click", function () {
+  btn.addEventListener("click", function (e) {
+    const btn = e.currentTarget;
+    const container = btn.parentNode;
+
     if (btn.innerHTML === "ADD TO CART") {
       this.innerHTML = "REMOVE FROM CART";
     } else {
       this.innerHTML = "ADD TO CART";
     }
+
+    const orders = {
+      id: container.getAttribute("data-index"),
+      name: container.querySelector("p").innerHTML,
+      price: container.getAttribute("data-price"),
+    };
+
+    localStorage.setItem("orders", JSON.stringify(orders));
   });
 });

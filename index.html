@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E Commerce Website</title>
-    <link rel="stylesheet" href="project.css" />
+    <link rel="stylesheet" href="css/project.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
   <body>
-    <!-- Header Section -->
     <div class="wrapper">
       <header>
         <div class="wealth">
@@ -20,17 +19,30 @@
           </span>
         </div>
         <div class="header-logo">
-          <span class="logo"> <i class="fa fa-opencart"></i></span>
-          <h2>EWS</h2>
+          <span class="logo">
+            <i class="fa fa-opencart"></i>
+            <span id="header-text">EWS</span></span
+          >
         </div>
 
         <div class="header-links">
-          <a href="#" class="active">Home</a>
-          <a href="#About">About</a>
-          <a href="#Shop">Shop</a>
+          <a href="#" class="active"
+            ><span class="logo-head"><i class="fa fa-home"></i></span>Home</a
+          >
+          <a href="#About">
+            <span class="logo-head"><i class="fa fa-info-circle"></i></span
+            >About</a
+          >
+          <a href="#Shop">
+            <span class="logo-head"><i class="fa fa-caret-down"></i></span
+            >Shop</a
+          >
         </div>
         <div class="header-icon">
-          <span class="cart"> <i class="fa fa-1.5x fa-shopping-cart"></i></span>
+          <span class="cart">
+            <i class="fa fa-shopping-bag"></i>
+            <span id="cart-count"></span
+          ></span>
         </div>
       </header>
       <main>
@@ -61,7 +73,6 @@
       <h2>OUR GADGETS</h2>
       <div class="content"></div>
     </section>
-    <!-- Footer Section -->
 
     <footer>
       <div class="footer-grid">
@@ -69,7 +80,7 @@
         <div>&copy Designed and Coded by an Ustacky Frontend Scholar</div>
       </div>
     </footer>
-
-    <script src="project.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/project.js"></script>
   </body>
 </html>

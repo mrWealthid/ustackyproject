@@ -75,8 +75,6 @@ const image = document.querySelectorAll(".img-class");
 image.forEach((item) => {
   item.addEventListener("mouseenter", () => {
     item.style.opacity = 0.4;
-
-    console.log("hi");
   });
 
   item.addEventListener("mouseleave", () => {
@@ -84,6 +82,11 @@ image.forEach((item) => {
   });
 });
 
+//display messages
+const addMsg = document.querySelector(".test");
+const removeMsg = document.querySelector(".test");
+
+//creating/accessing cart
 const getCart = () => {
   let cart = localStorage.getItem(cartName);
 
@@ -95,6 +98,7 @@ const getCart = () => {
   return JSON.parse(cart);
 };
 
+//updating counter value
 const getCounter = () => {
   const cart = getCart();
   const counter = cart.length;
@@ -112,6 +116,8 @@ const addToCart = function (id) {
 
   if (cartItem) {
     const itemIndex = cart.findIndex((item) => item.id == id);
+
+    console.log(itemIndex);
     cart[itemIndex].quantity = cartItem.quantity + 1;
   } else {
     product.quantity = 1;
@@ -126,7 +132,11 @@ const addToCart = function (id) {
 
   getCounter();
 
-  alert("Added to cart");
+  addMsg.innerHTML = "Product Has Been Added";
+  addMsg.classList.add("msg");
+  setTimeout(() => {
+    addMsg.classList.remove("msg");
+  }, 1000);
 };
 
 // Remove from cart.
@@ -152,11 +162,14 @@ const removeFromCart = (id) => {
   button.innerHTML = "ADD TO CART";
   button.setAttribute("onclick", `addToCart('${id}')`);
 
-  alert("Product removed from cart");
-
   getCounter();
 
-  return true;
+  removeMsg.innerHTML = "Product Has Been Removed";
+  removeMsg.classList.add("msg2");
+
+  setTimeout(() => {
+    removeMsg.classList.remove("msg2");
+  }, 1000);
 };
 
 //get counter

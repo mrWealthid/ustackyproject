@@ -52,8 +52,11 @@ header {
   font-weight: 700;
 }
 
-.fa-shopping-bag,
 .fa-opencart {
+  color: black;
+}
+
+.fa-shopping-bag {
   color: #f5dbaa;
 }
 .logo-head {
@@ -100,7 +103,6 @@ main {
 }
 
 .main-content h1 {
-  /* text-shadow: 2px 3px 3px gray; */
   font-family: "Gruppo";
 }
 
@@ -111,7 +113,7 @@ main {
   margin-top: 2px;
 }
 #shopping {
-  width: 250px;
+  width: 25%;
   padding: 20px;
   margin: 50px 0vw;
   border: none;
@@ -124,7 +126,6 @@ main {
 #shopping:hover {
   background-color: wheat;
   color: gray;
-  /* border: 1px solid gray; */
 }
 section {
   text-align: center;
@@ -152,8 +153,8 @@ section h2 {
   margin-right: 15px;
 }
 .priceDetails {
-  position: relative;
-  top: -190px;
+  transform: translate(187%, -440%);
+  position: absolute;
   visibility: hidden;
   font-size: 20px;
 }
@@ -190,9 +191,7 @@ section h2 {
   top: 0;
   display: block;
 }
-/* img:hover {
-  opacity: 0.2;
-} */
+
 .prices {
   background-color: gray;
   color: black;
@@ -267,11 +266,12 @@ footer {
     right: 100%;
     width: 50%;
     text-align: center;
-    background-color: white;
+    background-color: #f1ece3;
     height: 100vh;
     position: fixed;
     transition: right 0.2s ease-in-out;
     box-shadow: 1px 1px 3px grey;
+    border-radius: 5px;
   }
 
   a {
@@ -283,7 +283,7 @@ footer {
     margin: 0px;
   }
   .header-links a:first-of-type {
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .active,
   a:hover {
@@ -310,8 +310,7 @@ footer {
     grid-template-columns: auto;
   }
   #shopping {
-    width: 150px;
-    padding: 15px;
+    padding: 10px;
   }
 
   .show {
@@ -334,14 +333,18 @@ footer {
     padding: 5px;
   }
 
+  .priceDetails {
+    transform: translate(187%, -300%);
+  }
+
+  #pitch {
+    font-size: x-small;
+    margin-top: 4px;
+  }
   #shopping {
-    width: 90px;
     padding: 10px 5px;
   }
 
-  .priceDetails {
-    top: -110px;
-  }
   .main-content {
     font-size: 12px;
   }

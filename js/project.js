@@ -149,9 +149,12 @@ const removeFromCart = (id) => {
   console.log(index);
 
   if (index == null) {
-    alert("Product does not exist in cart");
+    removeMsg.innerHTML = "Product does not exist in cart";
+    removeMsg.classList.add("msg2");
 
-    return false;
+    setTimeout(() => {
+      removeMsg.classList.remove("msg2");
+    }, 1000);
   }
 
   cart.splice(index, 1);

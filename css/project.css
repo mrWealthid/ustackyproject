@@ -43,21 +43,22 @@ header {
 .header-logo {
   display: inline-block;
   font-family: "Raleway", sans-serif;
-
-  color: black;
+  color: #000000d1;
   font-weight: 700;
 }
 .header-links {
   font-family: "Caudex", sans-serif;
   font-weight: 700;
+  color: #000000d1;
 }
 
 .fa-opencart {
-  color: black;
+  color: #000000d1;
 }
 
 .fa-shopping-bag {
   color: #f5dbaa;
+  text-shadow: 1px 2px 2px grey;
 }
 .logo-head {
   display: none;
@@ -113,7 +114,7 @@ main {
   margin-top: 2px;
 }
 #shopping {
-  width: 25%;
+  width: 28%;
   padding: 20px;
   margin: 50px 0vw;
   border: none;
@@ -221,7 +222,7 @@ img {
 }
 
 footer {
-  background-color: black;
+  background-color: #000000d1;
   width: 100%;
   margin-top: 30px;
 }
@@ -310,7 +311,8 @@ footer {
     grid-template-columns: auto;
   }
   #shopping {
-    padding: 10px;
+    padding: 15px 10px;
+    margin: 30px 0vw;
   }
 
   .show {
@@ -325,27 +327,38 @@ footer {
 
 @media (max-width: 540px) {
   img {
-    width: 72%;
+    width: 65%;
   }
 
+  .cart {
+    margin-right: 0px;
+    font-size: small;
+  }
+
+  .header-logo {
+    margin: 0px;
+  }
+  #icons {
+    font-size: small;
+  }
   #items {
     width: 90px;
     padding: 5px;
   }
 
   .priceDetails {
-    transform: translate(187%, -300%);
+    transform: translate(120%, -250%);
   }
 
   #pitch {
     font-size: x-small;
     margin-top: 4px;
   }
-  #shopping {
-    padding: 10px 5px;
-  }
 
   .main-content {
     font-size: 12px;
+  }
+  #header-text {
+    font-size: small;
   }
 }

@@ -26,38 +26,36 @@
         >
       </div>
     </header>
+
     <div class="form-wrapper">
       <form>
-        <div>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Enter FullName"
-            required
-          />
-        </div>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Enter FullName"
+          required
+        />
+        <p class="errorMsg1"></p>
 
-        <div>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Enter Email Address"
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="number"
-            name="number"
-            id="number"
-            placeholder="+234"
-            maxlength="13"
-            minlength="13"
-            required
-          />
-        </div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter Email Address"
+          required
+        />
+        <p class="errorMsg2"></p>
+
+        <input
+          type="tel"
+          name="tel"
+          id="tel"
+          placeholder="Enter phone number"
+          maxlength="11"
+          required
+        />
+        <p class="errorMsg3"></p>
       </form>
     </div>
     <div id="displayed"></div>
@@ -80,12 +78,10 @@
     </form> -->
     <footer>
       <div class="footer-grid">
-        <div class="footer-logo">EWS</div>
+        <div class="footer-logo">WEALTH</div>
         <div>&copy Designed and Coded by an Ustacky Frontend Scholar</div>
       </div>
     </footer>
-
-    <!-- <script src="project.js"></script> -->
 
     <script>
       const cartName = "Wealthcart";
@@ -103,35 +99,35 @@
       cart = getCart();
       cart.forEach((item, index) => {
         const orders = `<div class="card"  data-id ="product${item.index}">
-          <span>${index + 1}</span>
-                            <img src = "images/product${item.index}.png"/>
-                           <div> <p class ="name">${item.name}</p>
-                            <p  class ="price${item.index} price">${
-          item.price
+                <span>${index + 1}</span>
+                                  <img src = "images/product${item.index}.png"/>
+                                 <div> <p class ="name">${item.name}</p>
+                                  <p>Currency: (&#8358)</p>
+                                 <p  class ="price${item.index} price">${
+          item.price * item.quantity
         }</p>
-
-                            <p class ="quantity${item.index}">${
+                                  <p class ="quantity${item.index}">${
           item.quantity
         }</p>
-                            <button onclick="increase(${
-                              item.index
-                            })" class ="increase${
+                                  <button onclick="increase(${
+                                    item.index
+                                  })" class ="increase${
           item.index
         }" id ="increase"> +</button>
-                            <button onclick="decrease(${
-                              item.index
-                            })"class ="decrease${
+                                  <button onclick="decrease(${
+                                    item.index
+                                  })"class ="decrease${
           item.index
         }" id ="decrease"> - </button>
-                            <br>
-                            <br>
-                            <button onclick = "remove(${
-                              item.index
-                            })" class ="remove${
+                                  <br>
+                                  <br>
+                                  <button onclick = "remove(${
+                                    item.index
+                                  })" class ="remove${
           item.index
         }" id ="remove">Remove</button>
-                            </div>
-                </div>`;
+                                  </div>
+                      </div>`;
 
         document.querySelector("#displayed").innerHTML += orders;
       });
@@ -184,7 +180,9 @@
         prices.forEach((item) => {
           sum += parseInt(item.innerHTML);
         });
-        document.querySelector("#total").innerHTML = `Total Amount:  ${sum}`;
+        document.querySelector(
+          "#total"
+        ).innerHTML = `Total Amount:  <span>&#8358</span>   ${sum}`;
       }
 
       addPrices();
@@ -202,11 +200,35 @@
       }
 
       document.querySelector("#shopRedirect").onclick = () => {
-        window.location.href = "index.html";
+        window.location.href = "index.html#Shop";
       };
-    </script>
 
-    <!-- 
-    // <script src="js/project.js"></script> -->
+      //form validation
+      const name = document.querySelector("#name");
+      const email = document.querySelector("#email");
+      const tel = document.querySelector("#tel");
+      const errorMsg1 = document.querySelector(".errorMsg1");
+      const errorMsg2 = document.querySelector(".errorMsg2");
+      const errorMsg3 = document.querySelector(".errorMsg3");
+
+      (function formInputValidation() {
+        name.addEventListener("blur", () => {
+          if (name.value === "" || name.value < 0) {
+            errorMsg1.innerHTML = "Please enter your name";
+          }
+        });
+        email.addEventListener("blur", () => {
+          if (email.value === "" || !email.value.includes("@")) {
+            errorMsg2.innerHTML = "Please enter a valid email address";
+          }
+        });
+
+        tel.addEventListener("blur", () => {
+          if (tel.value === "" || typeof tel.value === "string") {
+            errorMsg3.innerHTML = "Please enter a valid phone number";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

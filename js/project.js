@@ -60,7 +60,7 @@ card.forEach((item) => {
   const selected = item.querySelector(".priceDetails");
 
   item.addEventListener("mouseenter", () => {
-    selected.innerHTML = price;
+    selected.innerHTML = `<span>&#8358</span> ${price}`;
     selected.style.visibility = "visible";
   });
 

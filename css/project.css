@@ -58,7 +58,6 @@ header {
 
 .fa-shopping-bag {
   color: #f5dbaa;
-  text-shadow: 1px 2px 2px grey;
 }
 .logo-head {
   display: none;
@@ -82,7 +81,8 @@ header {
 }
 
 #header-text {
-  font-size: larger;
+  font-family: "Gruppo";
+  text-shadow: 0px 0px 1px black;
 }
 
 .wealth {
@@ -245,10 +245,11 @@ footer {
   color: wheat;
   grid-row-gap: 10px;
 }
-
-#icons,
 .cart {
-  font-size: 25px;
+  background: #00000073;
+  padding: 5px 10px;
+  border-radius: 18px;
+  font-size: 18px;
   color: wheat;
 }
 
@@ -258,7 +259,7 @@ footer {
   }
 
   .main-content {
-    font-size: 16px;
+    font-size: 25px;
   }
   .content {
     grid-template-columns: auto auto;
@@ -313,17 +314,16 @@ footer {
   .cart {
     margin-right: 5px;
   }
+
+  #icons,
+  .cart {
+    font-size: 15px;
+  }
   #icons {
-    font-size: 25px;
     color: gray;
   }
   .content {
     grid-template-columns: auto;
-  }
-  #shopping {
-    padding: 15px 10px;
-    margin: 30px 0vw;
-    width: 100px;
   }
 
   .show {
@@ -368,9 +368,25 @@ footer {
   }
 
   .main-content {
-    font-size: 12px;
+    font-size: 15px;
   }
   #header-text {
     font-size: small;
+  }
+  #shopping {
+    padding: 15px 0px;
+    margin: 30px 0vw;
+    width: 45%;
+  }
+}
+
+@media (max-width: 200px) {
+  .header-logo {
+    margin: 0px;
+    display: none;
+  }
+
+  .header-icon {
+    margin-right: 5px;
   }
 }

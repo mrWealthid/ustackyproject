@@ -3,29 +3,54 @@ header {
   padding: 20px;
 }
 
+body {
+  background-color: #f5deb31a;
+}
 .wrapper {
   background: none;
 }
 form {
-  width: 65%;
+  width: 100%;
+  margin-left: 20px;
 }
 
 input {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0px;
+  width: 55%;
+  padding: 14px;
+  margin: 10px 5px;
   outline: none;
   border-radius: 5px;
-  border: 1px solid #a26d6d;
+  border: 1px solid lightgray;
+  font-family: "Caudex";
+}
+
+button {
+  font-family: "Caudex";
+  font-weight: 800;
+}
+.errorMsg1,
+.errorMsg2,
+.errorMsg3 {
+  color: brown;
+  font-size: small;
+  margin-left: 30px;
+}
+input:focus {
+  box-shadow: 1px 1px 2px gray;
+}
+#last {
+  text-align: center;
 }
 
 .card {
   display: flex;
   margin: 20px;
+  background-color: white;
   justify-content: space-between;
-  border: 1px solid #a26d6d;
+  border: 1px solid lightgray;
   padding: 20px;
   border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .card > div {
@@ -38,13 +63,15 @@ div p {
 }
 img {
   width: 190px;
+  margin: 0px auto;
 }
 
 #total {
   text-align: end;
   font-weight: bolder;
-  font-size: xx-large;
-  margin-right: 10px;
+  font-size: x-large;
+
+  margin: 40px 10px;
 }
 
 .btns {
@@ -64,20 +91,29 @@ img {
   margin: 40px 10px;
   border: none;
   border-radius: 8px;
-  font-family: "raleway";
+
   background-color: gray;
   color: wheat;
 }
 
+#shopRedirect:hover {
+  background-color: wheat;
+  color: gray;
+}
 #checkout {
   width: 28%;
   padding: 20px;
   margin: 40px 10px;
   border: none;
   border-radius: 8px;
-  font-family: "raleway";
+
   background-color: lightseagreen;
   color: wheat;
+}
+
+#checkout:hover {
+  background-color: whitesmoke;
+  color: lightseagreen;
 }
 
 #increase,
@@ -110,13 +146,40 @@ img {
 @media (max-width: 700px) {
   .card {
     flex-direction: column;
+    text-align: center;
+  }
+  input {
+    width: 95%;
   }
 
+  .logo {
+    margin: 0px;
+  }
+
+  .header-logo {
+    display: block;
+  }
   .card span {
     display: none;
   }
 
   header {
     justify-content: center;
+  }
+  #last {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  #total {
+    text-align: center;
+    font-size: large;
+  }
+
+  .errorMsg1,
+  .errorMsg2,
+  .errorMsg3 {
+    text-align: center;
   }
 }

@@ -1,4 +1,4 @@
-const cartName = "bencart";
+const cartName = "Wealthcart";
 
 var products = [
   {
@@ -117,11 +117,21 @@ const addToCart = function (id) {
   if (cartItem) {
     const itemIndex = cart.findIndex((item) => item.id == id);
 
-    console.log(itemIndex);
     cart[itemIndex].quantity = cartItem.quantity + 1;
+
+    addMsg.innerHTML = `${product.name} Has Been Updated`;
+    addMsg.classList.add("msg");
+    setTimeout(() => {
+      addMsg.classList.remove("msg");
+    }, 1000);
   } else {
     product.quantity = 1;
     cart.push(product);
+    addMsg.innerHTML = `${product.name} Has Been Added`;
+    addMsg.classList.add("msg");
+    setTimeout(() => {
+      addMsg.classList.remove("msg");
+    }, 1000);
   }
 
   localStorage.setItem(cartName, JSON.stringify(cart));
@@ -131,19 +141,12 @@ const addToCart = function (id) {
   button.setAttribute("onclick", `removeFromCart('${id}')`);
 
   getCounter();
-
-  addMsg.innerHTML = "Product Has Been Added";
-  addMsg.classList.add("msg");
-  setTimeout(() => {
-    addMsg.classList.remove("msg");
-  }, 1000);
 };
 
 // Remove from cart.
 const removeFromCart = (id) => {
   const cart = getCart();
-
-  id.innerHTML = "REMOVE FROM CART";
+  const product = products.find((product) => product.id == id);
   const index = cart.findIndex((item) => item.id == id);
 
   console.log(index);
@@ -167,7 +170,7 @@ const removeFromCart = (id) => {
 
   getCounter();
 
-  removeMsg.innerHTML = "Product Has Been Removed";
+  removeMsg.innerHTML = `${product.name} Has Been Removed`;
   removeMsg.classList.add("msg2");
 
   setTimeout(() => {
@@ -175,4 +178,8 @@ const removeFromCart = (id) => {
   }, 1000);
 };
 
-//get counter
+//getting cart modal
+
+document.querySelector(".cart").onclick = () => {
+  window.location.href = "cart.html";
+};

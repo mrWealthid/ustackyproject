@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wealth Cart</title>
+    <link rel="stylesheet" href="css/project.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="wealth">
+        <span id="icons">
+          <i class="fa fa-1.5x fa-bars"></i>
+        </span>
+      </div>
+      <div class="header-logo">
+        <span class="logo">
+          <i class="fa fa-opencart"></i>
+          <span id="header-text">WEALTH</span></span
+        >
+      </div>
+    </header>
+    <div class="form-wrapper">
+      <form>
+        <div>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter FullName"
+            required
+          />
+        </div>
+
+        <div>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Email Address"
+            required
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            placeholder="+234"
+            maxlength="13"
+            minlength="13"
+            required
+          />
+        </div>
+      </form>
+    </div>
+    <div id="displayed"></div>
+
+    <div id="total"></div>
+
+    <div class="btns">
+      <button id="shopRedirect">Continue Shopping</button>
+      <button id="checkout">Proceed To Checkout</button>
+    </div>
+    <!-- <div class="detail">
+        <div id="heads"></div>
+        <div class="details"></div>
+      </div> -->
+
+    <!-- <div class="action">
+        <input type="submit" id="Checkout" value="Checkout" />
+        <input type="button" id="Shop" value="Shop" />
+      </div>
+    </form> -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-logo">EWS</div>
+        <div>&copy Designed and Coded by an Ustacky Frontend Scholar</div>
+      </div>
+    </footer>
+
+    <!-- <script src="project.js"></script> -->
+
+    <script>
+      const cartName = "Wealthcart";
+      const getCart = () => {
+        let cart = localStorage.getItem(cartName);
+
+        if (!cart) {
+          localStorage.setItem(cartName, JSON.stringify([]));
+          cart = localStorage.getItem(cartName);
+        }
+
+        return JSON.parse(cart);
+      };
+
+      cart = getCart();
+      cart.forEach((item, index) => {
+        const orders = `<div class="card"  data-id ="product${item.index}">
+          <span>${index + 1}</span>
+                            <img src = "images/product${item.index}.png"/>
+                           <div> <p class ="name">${item.name}</p>
+                            <p  class ="price${item.index} price">${
+          item.price
+        }</p>
+
+                            <p class ="quantity${item.index}">${
+          item.quantity
+        }</p>
+                            <button onclick="increase(${
+                              item.index
+                            })" class ="increase${
+          item.index
+        }" id ="increase"> +</button>
+                            <button onclick="decrease(${
+                              item.index
+                            })"class ="decrease${
+          item.index
+        }" id ="decrease"> - </button>
+                            <br>
+                            <br>
+                            <button onclick = "remove(${
+                              item.index
+                            })" class ="remove${
+          item.index
+        }" id ="remove">Remove</button>
+                            </div>
+                </div>`;
+
+        document.querySelector("#displayed").innerHTML += orders;
+      });
+
+      function increase(index) {
+        const flow = cart.find((item) => item.index == index);
+
+        if (flow) {
+          const itemIndex = cart.findIndex((item) => item.index == index);
+
+          cart[itemIndex].quantity = flow.quantity + 1;
+
+          // cart[itemIndex].price = flow.price
+
+          document.querySelector(".quantity" + index).innerHTML = flow.quantity;
+
+          document.querySelector(".price" + index).innerHTML =
+            flow.price * flow.quantity;
+        }
+        addPrices();
+        localStorage.setItem(cartName, JSON.stringify(cart));
+      }
+
+      function decrease(index) {
+        const flow = cart.find((item) => item.index == index);
+
+        const itemIndex = cart.findIndex((item) => item.index == index);
+
+        if (cart[itemIndex].quantity > 1) {
+          cart[itemIndex].quantity = flow.quantity - 1;
+
+          document.querySelector(".quantity" + index).innerHTML = flow.quantity;
+        } else {
+          alert(
+            "Do you want to remove item? if yes, use the remove button below"
+          );
+        }
+        document.querySelector(".price" + index).innerHTML =
+          flow.price * flow.quantity;
+
+        addPrices();
+
+        localStorage.setItem(cartName, JSON.stringify(cart));
+      }
+
+      const prices = document.querySelectorAll(".price");
+
+      function addPrices() {
+        let sum = 0;
+        prices.forEach((item) => {
+          sum += parseInt(item.innerHTML);
+        });
+        document.querySelector("#total").innerHTML = `Total Amount:  ${sum}`;
+      }
+
+      addPrices();
+
+      function remove(index) {
+        const cart = getCart();
+        const findItem = cart.find((item) => item.index == index);
+        if (findItem) {
+          const itemIndex = cart.findIndex((item) => item.index == index);
+          cart.splice(itemIndex, 1);
+
+          localStorage.setItem(cartName, JSON.stringify(cart));
+        }
+        location.reload();
+      }
+
+      document.querySelector("#shopRedirect").onclick = () => {
+        window.location.href = "index.html";
+      };
+    </script>
+
+    <!-- 
+    // <script src="js/project.js"></script> -->
+  </body>
+</html>

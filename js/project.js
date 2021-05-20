@@ -1,4 +1,4 @@
-const cartName = "Wealthcart";
+const cartName = "wealthCart";
 
 var products = [
   {

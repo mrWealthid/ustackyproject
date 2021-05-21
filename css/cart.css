@@ -178,6 +178,11 @@ img {
   z-index: 2;
 }
 
+footer {
+  position: absolute;
+
+  transform: translate(0px, 100vh);
+}
 @media (max-width: 700px) {
   .card {
     flex-direction: column;
@@ -203,6 +208,12 @@ img {
   }
   #last {
     text-align: left;
+  }
+
+  footer {
+    position: absolute;
+
+    transform: translate(0px, 100%);
   }
 }
 

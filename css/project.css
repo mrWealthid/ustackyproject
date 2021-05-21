@@ -253,6 +253,12 @@ footer {
   color: wheat;
 }
 
+footer {
+  position: absolute;
+
+  transform: translate(0px, 45px);
+}
+
 @media (max-width: 950px) {
   .header-logo {
     margin-left: 10px;
@@ -306,6 +312,9 @@ footer {
     border-left: 5px solid gray;
   }
 
+  .main-content {
+    font-size: 15px;
+  }
   .logo-head {
     transform: translateX(-3em);
     position: absolute;

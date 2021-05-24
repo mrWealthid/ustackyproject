@@ -61,13 +61,24 @@
       <div id="displayed"></div>
 
       <div id="total"></div>
-
+      <input type="number" value="5000" id="amount" hidden />
       <div class="btns">
         <button id="shopRedirect">Continue Shopping</button>
-        <button id="checkout">Proceed To Checkout</button>
+        <button onclick="payWithPaystack()" id="checkout">
+          Proceed To Checkout
+        </button>
       </div>
     </div>
 
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="content-head"></p>
+        <p id="content">Some text in the Modal..</p>
+
+        <button onclick="clearCart()" id="close-btn">Close</button>
+      </div>
+    </div>
     <footer>
       <div class="footer-grid">
         <div class="footer-logo">WEALTH</div>
@@ -76,5 +87,6 @@
     </footer>
 
     <script src="js/cart.js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
   </body>
 </html>

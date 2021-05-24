@@ -10,6 +10,8 @@
 :root {
   scroll-behavior: smooth;
   scroll-padding-top: 5px;
+  --body-color: #f5deb31a;
+  --body-font: "Caudex", Tahoma;
 }
 
 button {
@@ -19,9 +21,10 @@ button {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Caudex";
+  font-family: var(--body-font);
   font-size: larger;
   font-weight: lighter;
+  background-color: var(--body-color);
 }
 
 .wrapper {
@@ -47,7 +50,6 @@ header {
   font-weight: 700;
 }
 .header-links {
-  font-family: "Caudex", sans-serif;
   font-weight: 700;
   color: #000000d1;
 }
@@ -108,7 +110,6 @@ main {
 }
 
 #pitch {
-  font-family: "Caudex";
   font-variant: none;
   font-size: small;
   margin-top: 2px;
@@ -251,12 +252,6 @@ footer {
   border-radius: 18px;
   font-size: 18px;
   color: wheat;
-}
-
-footer {
-  position: absolute;
-
-  transform: translate(0px, 45px);
 }
 
 @media (max-width: 950px) {

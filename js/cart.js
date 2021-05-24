@@ -21,7 +21,7 @@ const syncPrice = () => {
 
   document.querySelector(
     "#total"
-  ).innerHTML = `Total Amount:  <span>&#8358</span>   ${total}`;
+  ).innerHTML = `Total Amount To Be Paid:  <span>&#8358</span>   ${total}`;
   return total;
 };
 
@@ -176,14 +176,11 @@ const errorMsg3 = document.querySelector(".errorMsg3");
 })();
 
 function payWithPaystack() {
-  console.log("test");
   let handler = PaystackPop.setup({
-    key: "pk_test_c8d49ba5c7751a42402cb85eeb58485e3bb3d0f6", // Replace with your public key
+    key: "pk_test_c8d49ba5c7751a42402cb85eeb58485e3bb3d0f6",
     email: document.getElementById("email").value,
     amount: syncPrice() * 100,
-    // amount: syncPrice() * 100,
-    ref: "" + Math.floor(Math.random() * 1000000000 + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-    // label: "Optional string that replaces customer email"
+    ref: "" + Math.floor(Math.random() * 1000000000 + 1),
     onClose: function () {
       alert("Window closed.");
     },
@@ -207,7 +204,7 @@ function clearCart() {
   getCartItems();
 }
 
-// Get the modal<script>
+// Get the modal
 const modal = document.getElementById("myModal");
 
 const showSummary = () => {
@@ -217,9 +214,10 @@ const showSummary = () => {
   let names = document.getElementById("name").value;
   document.getElementById(
     "content-head"
-  ).innerHTML = `<div class= summary-heading><h2>Thanks ${names}, your payment was successful</h2>
+  ).innerHTML = `<div class= summary-heading><h2>Thank You<span class ="name"> ${names}</span>, Your Order Has Been Recieved</h2>
   
   <img id ='check' src= "images/check.svg"/>
+  <h1>Summary</h1>
   </div>`;
 
   document.getElementById(
@@ -227,7 +225,7 @@ const showSummary = () => {
   ).innerHTML = `<div class = 'summary-subheading'>
 
   <span>S/No</span>
-  <span>Name</span>
+  <span>Item</span>
   <span>Quantity</span>
   </div>`;
   cart.forEach((item, index) => {
@@ -243,10 +241,4 @@ const showSummary = () => {
 
 const closeModal = () => {
   modal.style.display = "none";
-};
-
-window.onclick = function (event) {
-  if (event.target == modal) {
-    closeModal();
-  }
 };

@@ -58,24 +58,28 @@
           <p class="errorMsg3"></p>
         </form>
       </div>
+
+      <!-- to generate cart-markup -->
       <div id="displayed"></div>
 
+      <!-- To display total Amount -->
       <div id="total"></div>
-      <input type="number" value="5000" id="amount" hidden />
+
       <div class="btns">
-        <button id="shopRedirect">Continue Shopping</button>
+        <button onclick="shopRedirect()" id="shopRedirect">
+          Continue Shopping
+        </button>
         <button onclick="payWithPaystack()" id="checkout">
           Proceed To Checkout
         </button>
       </div>
     </div>
 
+    <!-- Modal content -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <p id="content-head"></p>
         <p id="content">Some text in the Modal..</p>
-
         <button onclick="clearCart()" id="close-btn">Close</button>
       </div>
     </div>

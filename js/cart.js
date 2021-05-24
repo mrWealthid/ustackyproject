@@ -1,4 +1,15 @@
 const cartName = "wealthCart";
+
+//Go to shop
+const shopRedirect = () => {
+  window.location.href = "index.html#Shop";
+};
+
+//Go to intro
+const introRedirect = () => {
+  window.location.href = "index.html";
+};
+//get Mycart
 const getCart = () => {
   let cart = localStorage.getItem(cartName);
 
@@ -10,7 +21,7 @@ const getCart = () => {
   return JSON.parse(cart);
 };
 
-//Syncing the price with item price and item quantity directly from local storage cart
+//Syncing the price with item price and item quantity directly from local storage
 const syncPrice = () => {
   let myCart = getCart();
 
@@ -21,7 +32,7 @@ const syncPrice = () => {
 
   document.querySelector(
     "#total"
-  ).innerHTML = `Total Amount To Be Paid:  <span>&#8358</span>   ${total}`;
+  ).innerHTML = `Total Amount To Be Paid:  <span>&#8358</span> ${total.toLocaleString()}`;
   return total;
 };
 
@@ -37,9 +48,9 @@ const getCartItems = () => {
                                   <img src = "images/product${item.index}.png"/>
                                  <div> <p class ="name">${item.name}</p>
                                   <p>Currency: (&#8358)</p>
-                                 <p  class ="price${item.index} price">${
+                                 <p  class ="price${item.index} price">${(
       item.price * item.quantity
-    }</p>
+    ).toLocaleString()}</p>
                                   <p class ="quantity${item.index}">${
       item.quantity
     }</p>
@@ -82,8 +93,9 @@ const increase = (index) => {
 
     document.querySelector(".quantity" + index).innerHTML = flow.quantity;
 
-    document.querySelector(".price" + index).innerHTML =
-      flow.price * flow.quantity;
+    document.querySelector(".price" + index).innerHTML = (
+      flow.price * flow.quantity
+    ).toLocaleString();
   }
 
   localStorage.setItem(cartName, JSON.stringify(cart));
@@ -111,8 +123,9 @@ const decrease = (index) => {
       addMsg.classList.remove("msg");
     }, 1500);
   }
-  document.querySelector(".price" + index).innerHTML =
-    flow.price * flow.quantity;
+  document.querySelector(".price" + index).innerHTML = (
+    flow.price * flow.quantity
+  ).toLocaleString();
 
   localStorage.setItem(cartName, JSON.stringify(cart));
 
@@ -134,10 +147,6 @@ const remove = (index) => {
   syncPrice();
 
   getCartItems();
-};
-
-document.querySelector("#shopRedirect").onclick = () => {
-  window.location.href = "index.html#Shop";
 };
 
 //form validation
@@ -191,27 +200,15 @@ function payWithPaystack() {
   handler.openIframe();
 }
 
-function clearCart() {
-  let cart = getCart();
-  cart.splice(0, cart.length);
-  localStorage.setItem(cartName, JSON.stringify(cart));
-  email.value = "";
-  name.value = "";
-  tel.value = "";
-
-  closeModal();
-  syncPrice();
-  getCartItems();
-}
-
 // Get the modal
 const modal = document.getElementById("myModal");
 
+//show summary function
 const showSummary = () => {
   let cart = getCart();
+  let names = document.getElementById("name").value;
 
   modal.style.display = "block";
-  let names = document.getElementById("name").value;
   document.getElementById(
     "content-head"
   ).innerHTML = `<div class= summary-heading><h2>Thank You<span class ="name"> ${names}</span>, Your Order Has Been Recieved</h2>
@@ -239,6 +236,25 @@ const showSummary = () => {
   });
 };
 
+//Close Modal function
 const closeModal = () => {
   modal.style.display = "none";
+};
+
+//close modal when you click outside the modal
+window.onclick = function (event) {
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+//clear cart and form input fields
+const clearCart = () => {
+  let cart = getCart();
+  cart.splice(0, cart.length);
+  localStorage.setItem(cartName, JSON.stringify(cart));
+  email.value = "";
+  name.value = "";
+  tel.value = "";
+
+  introRedirect();
 };

@@ -14,10 +14,6 @@
   --body-font: "Caudex", Tahoma;
 }
 
-button {
-  outline: none;
-}
-
 body {
   margin: 0px;
   padding: 0px;
@@ -91,6 +87,8 @@ button {
   font-family: "Caudex", Tahoma;
   font-weight: 800;
   cursor: pointer;
+  outline: none;
+  transition: 1s;
 }
 
 .wealth {
@@ -264,6 +262,8 @@ footer {
 .cart:hover {
   border: 1px solid white;
 }
+
+/* Media queries for responsiveness */
 @media (max-width: 950px) {
   .header-logo {
     margin-left: 10px;

@@ -248,11 +248,6 @@ footer {
   transform: translate(0%, 0%);
 }
 
-@media (min-width: 1024px) {
-  footer {
-    bottom: 0%;
-  }
-}
 @media (max-width: 700px) {
   .card {
     flex-direction: column;

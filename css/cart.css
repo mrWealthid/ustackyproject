@@ -242,6 +242,11 @@ img {
   color: brown;
   border: 1px solid brown;
 }
+
+footer {
+  position: absolute;
+  transform: translate(0%, 0%);
+}
 @media (max-width: 700px) {
   .card {
     flex-direction: column;
@@ -268,12 +273,6 @@ img {
   #last {
     text-align: left;
   }
-
-  /* footer {
-    position: absolute;
-
-    transform: translate(0px, 100%);
-  } */
 
   .modal-content {
     height: 100%;

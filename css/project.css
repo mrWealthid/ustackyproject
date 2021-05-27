@@ -249,7 +249,7 @@ footer {
 .footer-grid {
   display: grid;
   grid-template-columns: auto auto;
-  padding: 30px;
+  padding: 20px;
   justify-content: space-around;
   color: wheat;
   grid-row-gap: 10px;

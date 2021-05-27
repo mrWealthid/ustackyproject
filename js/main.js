@@ -1,5 +1,6 @@
 // collapsable NavBar
 let headerLinks = document.querySelector(".header-links");
+let body = document.querySelector("body");
 let harmburger = document.querySelector("#icons");
 
 //when an option is clicked- it is hidden
@@ -12,10 +13,12 @@ let harmburger = document.querySelector("#icons");
 
 //I didn't toggle class with display none, because it doesn't permit transitions.
 
-(function toggle() {
+function toggle() {
   document.querySelector("#icons").onclick = () => {
     headerLinks.style.right == "100%"
       ? (headerLinks.style.right = "50%")
       : (headerLinks.style.right = "100%");
   };
-})();
+}
+
+toggle();

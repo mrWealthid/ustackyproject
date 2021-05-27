@@ -156,6 +156,10 @@ section h2 {
   position: relative;
 }
 
+.img-class:hover {
+  opacity: 0.3;
+}
+
 .header-icon {
   margin-right: 15px;
 }

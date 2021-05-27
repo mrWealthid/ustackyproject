@@ -72,18 +72,6 @@ card.forEach((item) => {
   });
 });
 
-//image-hover
-const image = document.querySelectorAll(".img-class");
-image.forEach((item) => {
-  item.addEventListener("mouseenter", () => {
-    item.style.opacity = 0.4;
-  });
-
-  item.addEventListener("mouseleave", () => {
-    item.style.opacity = 1;
-  });
-});
-
 //display messages
 const addMsg = document.querySelector(".test");
 const removeMsg = document.querySelector(".test");

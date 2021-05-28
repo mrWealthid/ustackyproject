@@ -293,12 +293,14 @@ footer {
     right: 100%;
     width: 50%;
     text-align: center;
-    background-color: #f1ece3;
+    background-color: whitesmoke;
     height: 100vh;
+    font-family: "Gruppo";
     position: fixed;
     transition: right 0.2s ease-in-out;
-    box-shadow: 1px 1px 3px grey;
+
     border-radius: 5px;
+    z-index: 1;
   }
 
   .links {
@@ -317,15 +319,16 @@ footer {
     background-color: transparent;
     color: gray;
     border-radius: 0px;
-    border: 1px solid white;
-    border-left: 5px solid gray;
+    border: transparent;
+    padding: 15px 0px;
+    border-bottom: 1px solid gainsboro;
   }
 
   .main-content {
     font-size: 15px;
   }
   .logo-head {
-    transform: translateX(-3em);
+    transform: translateX(-2.5em);
     position: absolute;
     display: inline-block;
   }
@@ -351,11 +354,6 @@ footer {
     display: block;
 
     margin-left: 18px;
-  }
-
-  .active,
-  .links:hover {
-    border: transparent;
   }
 }
 

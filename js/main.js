@@ -1,13 +1,17 @@
 // collapsable NavBar
 let headerLinks = document.querySelector(".header-links");
-let body = document.querySelector("body");
 let harmburger = document.querySelector("#icons");
+let main = document.querySelector("main");
 
-//when an option is clicked- it is hidden
+//when an option on the headerlinks/ outside is clicked- it is hidden
 
-(function hide() {
+(function hideLinks() {
   headerLinks.onclick = function () {
     this.style.right = "100%";
+  };
+
+  main.onclick = function () {
+    headerLinks.style.right = "100%";
   };
 })();
 

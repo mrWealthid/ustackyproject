@@ -314,6 +314,11 @@ footer {
   .header-links a:first-of-type {
     margin-top: 60px;
   }
+
+  .header-links .fa-shopping-bag {
+    color: black;
+  }
+
   .active,
   .links:hover {
     background-color: transparent;

@@ -117,7 +117,7 @@ const decrease = (index) => {
 
     document.querySelector(".quantity" + index).innerHTML = flow.quantity;
   } else {
-    addMsg.innerHTML = `Do you want to remove ${flow.name}? <br>if yes, kindly use the remove button below`;
+    addMsg.innerHTML = `Do You Want To Remove ${flow.name}? <br>If Yes, Kindly Use The Remove Button Below`;
     addMsg.classList.add("msg");
     setTimeout(() => {
       addMsg.classList.remove("msg");
@@ -185,19 +185,47 @@ const errorMsg3 = document.querySelector(".errorMsg3");
 })();
 
 function payWithPaystack() {
-  let handler = PaystackPop.setup({
-    key: "pk_test_c8d49ba5c7751a42402cb85eeb58485e3bb3d0f6",
-    email: document.getElementById("email").value,
-    amount: syncPrice() * 100,
-    ref: "" + Math.floor(Math.random() * 1000000000 + 1),
-    onClose: function () {
-      alert("Window closed.");
-    },
-    callback: function (response) {
-      setTimeout(showSummary, 1000);
-    },
-  });
-  handler.openIframe();
+  let carts = getCart();
+
+  if (name.value == "" && email.value == "" && tel.value == "") {
+    addMsg.innerHTML = `Kindly Fill Order Details Form Below`;
+    addMsg.classList.add("msg");
+    setTimeout(() => {
+      addMsg.classList.remove("msg");
+    }, 2000);
+  } //   alert("No Item in Cart and Details field isn't field");
+  else if (!carts.length > 0) {
+    addMsg.innerHTML = `You Have No Cart Item, To Add Items To Cart <br> Kindly Visit Shop Using The Continue Shopping Button Below`;
+    addMsg.classList.add("msg");
+    setTimeout(() => {
+      addMsg.classList.remove("msg");
+    }, 2500);
+  } else if (
+    (name.value == "" && email.value == "" && tel.value == "") ||
+    errorMsg1.innerHTML !== "" ||
+    errorMsg2.innerHTML !== "" ||
+    errorMsg3.innerHTML !== ""
+  ) {
+    addMsg.innerHTML = `Kindly Check The Form Validation Message Within Form Input Field `;
+    addMsg.classList.add("msg");
+    setTimeout(() => {
+      addMsg.classList.remove("msg");
+    }, 2000);
+  } else {
+    let handler = PaystackPop.setup({
+      key: "pk_test_c8d49ba5c7751a42402cb85eeb58485e3bb3d0f6",
+      email: document.getElementById("email").value,
+      amount: syncPrice() * 100,
+      ref: "" + Math.floor(Math.random() * 1000000000 + 1),
+      onClose: function () {
+        alert("Window closed.");
+      },
+      callback: function (response) {
+        setTimeout(showSummary, 1000);
+      },
+    });
+    handler.openIframe();
+  }
 }
 
 // Get the modal

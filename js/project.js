@@ -39,13 +39,35 @@ var products = [
   },
 ];
 
+//creating/accessing cart
+const getCart = () => {
+  let cart = localStorage.getItem(cartName);
+
+  if (!cart) {
+    localStorage.setItem(cartName, JSON.stringify([]));
+    cart = localStorage.getItem(cartName);
+  }
+
+  return JSON.parse(cart);
+};
+
+//check if product exists in the cart for button toggle
+const productExistsInCart = (productId) => {
+  const carts = getCart();
+  return carts.some((item) => item.id === productId);
+};
+
 // Creating Product markup from the array
 products.forEach((product) => {
-  const productMarkup = `<div class= "cards" data-price ="${product.price}" data-index = "${product.index}">
+  const existsInCart = productExistsInCart(product.id);
+  const actionButton = existsInCart
+    ? `<button class ="prices" id="actionbtn${product.id}" onclick="removeFromCart('${product.id}')">REMOVE FROM CART</button>`
+    : `<button class ="prices" id="actionbtn${product.id}" onclick="addToCart('${product.id}')">ADD TO CART</button>`;
+
+  const productMarkup = `<div  class= "cards" data-price ="${product.price}" data-index = "${product.index}">
 <img class ="img-class" src = "images/product${product.index}.png" alt = "${product.name}"/>
 <h4 class ="priceDetails"  id ="priceDetails${product.index}"></h4>
-<p>${product.name}</p>
-<button class ="prices" id="actionbtn${product.id}" onclick="addToCart('${product.id}')">ADD TO CART</button> 
+<p>${product.name}</p> ${actionButton}
 </div>`;
 
   document.querySelector(".content").innerHTML += productMarkup;
@@ -76,18 +98,6 @@ card.forEach((item) => {
 const addMsg = document.querySelector(".test");
 const removeMsg = document.querySelector(".test");
 
-//creating/accessing cart
-const getCart = () => {
-  let cart = localStorage.getItem(cartName);
-
-  if (!cart) {
-    localStorage.setItem(cartName, JSON.stringify([]));
-    cart = localStorage.getItem(cartName);
-  }
-
-  return JSON.parse(cart);
-};
-
 //updating counter value
 const getCounter = () => {
   const cart = getCart();
@@ -102,27 +112,13 @@ getCounter();
 const addToCart = function (id) {
   const cart = getCart();
   const product = products.find((product) => product.id == id);
-  const cartItem = cart.find((item) => item.id == id);
-
-  if (cartItem) {
-    const itemIndex = cart.findIndex((item) => item.id == id);
-
-    cart[itemIndex].quantity = cartItem.quantity + 1;
-
-    addMsg.innerHTML = `${product.name} Has Been Updated`;
-    addMsg.classList.add("msg");
-    setTimeout(() => {
-      addMsg.classList.remove("msg");
-    }, 1000);
-  } else {
-    product.quantity = 1;
-    cart.push(product);
-    addMsg.innerHTML = `${product.name} Has Been Added`;
-    addMsg.classList.add("msg");
-    setTimeout(() => {
-      addMsg.classList.remove("msg");
-    }, 1000);
-  }
+  product.quantity = 1;
+  cart.push(product);
+  addMsg.innerHTML = `${product.name} Has Been Added`;
+  addMsg.classList.add("msg");
+  setTimeout(() => {
+    addMsg.classList.remove("msg");
+  }, 1000);
 
   localStorage.setItem(cartName, JSON.stringify(cart));
 

@@ -187,7 +187,7 @@ const errorMsg3 = document.querySelector(".errorMsg3");
 function payWithPaystack() {
   let carts = getCart();
 
-  if (name.value == "" && email.value == "" && tel.value == "") {
+  if (name.value == "" || email.value == "" || tel.value == "") {
     addMsg.innerHTML = `Kindly Fill Order Details Form Below`;
     addMsg.classList.add("msg");
     setTimeout(() => {

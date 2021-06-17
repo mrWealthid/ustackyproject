@@ -31,6 +31,11 @@ header {
   font-size: larger;
 }
 
+#info {
+  margin-left: 29px;
+  margin-top: 20px;
+}
+
 .main p {
   font-size: smaller;
   font-variant: small-caps;
@@ -58,9 +63,9 @@ input {
 .errorMsg3 {
   color: brown;
   font-size: small;
-  margin-left: 30px;
   font-weight: bolder;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Caudex";
+  margin-left: 8px;
 }
 input:focus {
   box-shadow: 1px 1px 2px gray;
@@ -119,17 +124,17 @@ img {
   margin-top: 20px;
 }
 
-#shopRedirect {
+#shopRedirects {
   width: 30%;
   padding: 20px;
   margin: 40px 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   background-color: gray;
   color: var(--header-logo);
 }
 
-#shopRedirect:hover {
+#shopRedirects:hover {
   background-color: var(--header-logo);
   color: gray;
 }
@@ -138,7 +143,7 @@ img {
   padding: 20px;
   margin: 40px 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   background-color: lightseagreen;
   color: var(--header-logo);
 }
@@ -306,7 +311,7 @@ footer {
     text-align: center;
   }
 
-  #shopRedirect {
+  #shopRedirects {
     display: block;
     width: 83%;
     margin: 5px auto;

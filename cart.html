@@ -25,10 +25,11 @@
 
     <!-- Main section -->
     <div class="main">
-      <h3>Orders Details Page</h3>
-      <p>Kindly fill form below</p>
-      <div class="form-wrapper">
-        <form>
+    
+        <h3>Orders Details Page</h3>
+        <p id = "info">Kindly fill form below</p>
+        <div class="form-wrapper">
+          <form onsubmit="payWithPaystack(event)" >
           <input
             type="text"
             name="name"
@@ -52,27 +53,31 @@
             name="tel"
             id="tel"
             placeholder="Enter phone number"
-            maxlength="11"
+            minlength="11"
             required
+         
           />
           <p class="errorMsg3"></p>
-        </form>
-      </div>
+        </div>
+        <!-- to generate cart-markup -->
+        <div id="displayed"></div>
 
-      <!-- to generate cart-markup -->
-      <div id="displayed"></div>
+        <!-- To display total Amount -->
+        <div id="total"></div>
 
-      <!-- To display total Amount -->
-      <div id="total"></div>
-
-      <div class="btns">
-        <button onclick="shopRedirect()" id="shopRedirect">
-          Continue Shopping
-        </button>
-        <button onclick="payWithPaystack()" id="checkout">
-          Proceed To Checkout
-        </button>
-      </div>
+        <div class="btns">
+          <button type ="button" onclick="shopRedirect()" id="shopRedirects">
+            Continue Shopping
+          </button>
+          <button type="submit"
+          
+            id="checkout"
+            
+          >
+            Proceed To Checkout
+          </button>
+        </div>
+      </form>
     </div>
 
     <!-- Modal content -->

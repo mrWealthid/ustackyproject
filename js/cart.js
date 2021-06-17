@@ -1,10 +1,5 @@
 const cartName = "wealthCart";
 
-//Go to shop
-const shopRedirect = () => {
-  window.location.href = "index.html#Shop";
-};
-
 //Go to intro
 const introRedirect = () => {
   window.location.href = "index.html";
@@ -150,14 +145,15 @@ const remove = (index) => {
 };
 
 //form validation
-const name = document.querySelector("#name");
-const email = document.querySelector("#email");
-const tel = document.querySelector("#tel");
-const errorMsg1 = document.querySelector(".errorMsg1");
-const errorMsg2 = document.querySelector(".errorMsg2");
-const errorMsg3 = document.querySelector(".errorMsg3");
 
-(function formInputValidation() {
+function formValidation() {
+  const name = document.querySelector("#name");
+  const email = document.querySelector("#email");
+  const tel = document.querySelector("#tel");
+  const errorMsg1 = document.querySelector(".errorMsg1");
+  const errorMsg2 = document.querySelector(".errorMsg2");
+  const errorMsg3 = document.querySelector(".errorMsg3");
+
   name.addEventListener("blur", () => {
     if (name.value === "" || name.value < 0) {
       errorMsg1.innerHTML = "Please enter your name";
@@ -174,7 +170,7 @@ const errorMsg3 = document.querySelector(".errorMsg3");
   });
 
   tel.addEventListener("blur", () => {
-    if (Number.isNaN(parseInt(tel.value)) || tel.value == "") {
+    if (Number.isNaN(Number(tel.value))) {
       errorMsg3.innerHTML = "Input can only be numbers";
     } else if (tel.value.length < 11) {
       errorMsg3.innerHTML = "Phone numbers cannot be less than 11 digits";
@@ -182,35 +178,31 @@ const errorMsg3 = document.querySelector(".errorMsg3");
       errorMsg3.innerHTML = "";
     }
   });
-})();
+}
 
-function payWithPaystack() {
+formValidation();
+
+//Go to shop
+const shopRedirect = () => {
+  window.location.href = "index.html#Shop";
+};
+
+function payWithPaystack(e) {
+  e.preventDefault();
   let carts = getCart();
 
-  if (name.value == "" || email.value == "" || tel.value == "") {
-    addMsg.innerHTML = `Kindly Fill Order Details Form Below`;
+  if (Number.isNaN(Number(tel.value))) {
+    addMsg.innerHTML = `Check Form Validation Message Within Input Field `;
     addMsg.classList.add("msg");
     setTimeout(() => {
       addMsg.classList.remove("msg");
-    }, 2000);
-  } //   alert("No Item in Cart and Details field isn't field");
-  else if (!carts.length > 0) {
+    }, 2500);
+  } else if (carts.length <= 0) {
     addMsg.innerHTML = `You Have No Cart Item, To Add Items To Cart <br> Kindly Visit Shop Using The Continue Shopping Button Below`;
     addMsg.classList.add("msg");
     setTimeout(() => {
       addMsg.classList.remove("msg");
     }, 2500);
-  } else if (
-    (name.value == "" && email.value == "" && tel.value == "") ||
-    errorMsg1.innerHTML !== "" ||
-    errorMsg2.innerHTML !== "" ||
-    errorMsg3.innerHTML !== ""
-  ) {
-    addMsg.innerHTML = `Kindly Check The Form Validation Message Within Form Input Field `;
-    addMsg.classList.add("msg");
-    setTimeout(() => {
-      addMsg.classList.remove("msg");
-    }, 2000);
   } else {
     let handler = PaystackPop.setup({
       key: "pk_test_c8d49ba5c7751a42402cb85eeb58485e3bb3d0f6",

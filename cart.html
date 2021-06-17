@@ -25,11 +25,10 @@
 
     <!-- Main section -->
     <div class="main">
-    
-        <h3>Orders Details Page</h3>
-        <p id = "info">Kindly fill form below</p>
-        <div class="form-wrapper">
-          <form onsubmit="payWithPaystack(event)" >
+      <h3>Orders Details Page</h3>
+      <p id="info">Kindly fill form below</p>
+      <div class="form-wrapper">
+        <form onsubmit="payWithPaystack(event)">
           <input
             type="text"
             name="name"
@@ -55,47 +54,43 @@
             placeholder="Enter phone number"
             minlength="11"
             required
-         
           />
           <p class="errorMsg3"></p>
-        </div>
-        <!-- to generate cart-markup -->
-        <div id="displayed"></div>
 
-        <!-- To display total Amount -->
-        <div id="total"></div>
+          <!-- to generate cart-markup -->
+          <div id="displayed"></div>
 
-        <div class="btns">
-          <button type ="button" onclick="shopRedirect()" id="shopRedirects">
-            Continue Shopping
-          </button>
-          <button type="submit"
-          
-            id="checkout"
-            
-          >
-            Proceed To Checkout
-          </button>
-        </div>
-      </form>
-    </div>
+          <!-- To display total Amount -->
+          <div id="total"></div>
 
-    <!-- Modal content -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <p id="content-head"></p>
-        <p id="content">Some text in the Modal..</p>
-        <button onclick="clearCart()" id="close-btn">Close</button>
+          <div class="btns">
+            <button type="button" onclick="shopRedirect()" id="shopRedirects">
+              Continue Shopping
+            </button>
+            <button type="submit" id="checkout">
+              Proceed To Checkout
+            </button>
+          </div>
+        </form>
       </div>
-    </div>
-    <!-- <footer>
+
+      <!-- Modal content -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <p id="content-head"></p>
+          <p id="content">Some text in the Modal..</p>
+          <button onclick="clearCart()" id="close-btn">Close</button>
+        </div>
+      </div>
+      <!-- <footer>
       <div class="footer-grid">
         <div class="footer-logo">WEALTH</div>
         <div>&copy Designed and Coded by an Ustacky Frontend Scholar</div>
       </div>
     </footer> -->
 
-    <script src="js/cart.js"></script>
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+      <script src="js/cart.js"></script>
+      <script src="https://js.paystack.co/v1/inline.js"></script>
+    </div>
   </body>
 </html>

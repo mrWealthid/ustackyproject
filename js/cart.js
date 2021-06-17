@@ -251,7 +251,7 @@ const showSummary = () => {
     ).innerHTML += `<div class ='summary-items'>
   <span>${index + 1}</span>
   <span> ${item.name} </span>
-  <span> ${item.quantity}</span>
+  <span class ="item-quantity"> ${item.quantity}</span>
   </div>`;
   });
 };

@@ -154,8 +154,8 @@ img {
   border: 1px solid lightseagreen;
 }
 
-#increase,
-#decrease {
+#increased,
+#decreased {
   background-color: white;
   width: 30px;
   border: 1px solid var(--button-border);

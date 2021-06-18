@@ -49,19 +49,19 @@ const getCartItems = () => {
                                   <p class ="quantity${item.index}">${
       item.quantity
     }</p>
-                                  <button onclick="increase(${
+                                  <button type = "button" onclick="increase(${
                                     item.index
                                   })" class ="increase${
       item.index
-    }" id ="increase"> +</button>
-                                  <button onclick="decrease(${
+    }" id ="increased"> +</button>
+                                  <button type ="button" onclick="decrease(${
                                     item.index
                                   })"class ="decrease${
       item.index
-    }" id ="decrease"> - </button>
+    }" id ="decreased"> - </button>
                                   <br>
                                   <br>
-                                  <button onclick = "remove(${
+                                  <button type= "button" onclick = "remove(${
                                     item.index
                                   })" class ="remove${
       item.index

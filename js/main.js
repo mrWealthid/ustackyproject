@@ -1,28 +1,26 @@
+"use strict";
+
 // collapsable NavBar
+
 let headerLinks = document.querySelector(".header-links");
 let harmburger = document.querySelector("#icons");
-let main = document.querySelector("main");
+let overlay = document.querySelector(".overlay");
 
-//when an option on the headerlinks/ outside is clicked- it is hidden
+//when an option on the overlay, headerlink and harmburger is clicked- it is hidden the side bar is hidden
 
-(function hideLinks() {
-  headerLinks.onclick = function () {
-    this.style.right = "100%";
-  };
+const Toggler = function () {
+  headerLinks.classList.contains("header-links") &&
+    headerLinks.classList.toggle("show");
+  overlay.classList.toggle("overlay-filter");
+};
 
-  main.onclick = function () {
-    headerLinks.style.right = "100%";
-  };
-})();
+harmburger.addEventListener("click", Toggler);
 
-//I didn't toggle class with display none, because it doesn't permit transitions.
+headerLinks.addEventListener("click", Toggler);
 
-function toggle() {
-  document.querySelector("#icons").onclick = () => {
-    headerLinks.style.right == "100%"
-      ? (headerLinks.style.right = "50%")
-      : (headerLinks.style.right = "100%");
-  };
-}
+overlay.addEventListener("click", Toggler);
 
-toggle();
+// Escape Key toggles the collapsable nav
+document.addEventListener("keydown", (e) => {
+  e.key === "Escape" && Toggler();
+});

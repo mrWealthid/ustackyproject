@@ -319,6 +319,14 @@ footer {
     color: black;
   }
 
+  .overlay-filter {
+    position: absolute;
+    backdrop-filter: blur(3px);
+    width: 100%;
+    height: 100%;
+    top: 76px;
+  }
+
   .active,
   .links:hover {
     background-color: transparent;
@@ -353,7 +361,7 @@ footer {
   }
 
   .show {
-    display: block;
+    right: 50%;
   }
   .wealth {
     display: block;
